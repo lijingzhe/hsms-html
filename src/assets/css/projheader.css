@@ -1,0 +1,23 @@
+@import "./normalize.css";
+
+header {
+  height: 100px;
+  background: url("../img/head_bg.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.title {
+  font-size: 38px;
+  color: white;
+  text-align: center;
+  line-height: 80px;
+}
+
+.showTime {
+  position: absolute;
+  right: 30px;
+  top: 0;
+  line-height: 75px;
+  color: rgba(255,255,255,0.7);
+  font-size: 20px;
+}

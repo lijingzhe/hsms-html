@@ -1,0 +1,55 @@
+/*声明字体*/
+@font-face {
+  font-family: electronicFont;
+  src: url("../font/DS-DIGIT.TTF");
+}
+
+li {
+  list-style: none;
+}
+
+.digital {
+  background-color: rgba(101,132,226,0.1);
+  padding: 15px;
+  margin: 10px;
+
+}
+
+.value {
+  border: 1px solid rgba(25,186,139,0.17);
+  line-height: 80px;
+  font-size: 70px;
+  color: #ffeb7b;
+  font-family: "electronicFont";
+}
+
+.unit {
+  border: 1px solid rgba(25,186,139,0.17);
+  line-height: 80px;
+  font-size: 30px;
+  color: #eeeb7b;
+  font-family: "electronicFont";
+}
+
+
+.value::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 30px;
+  height: 10px;
+  border-top: 2px solid #02a6b5;
+  border-left: 2px solid #02a6b5;
+}
+.unit::after {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  content: "";
+  width: 30px;
+  height: 10px;
+  border-right: 2px solid #02a6b5;
+  border-bottom: 2px solid #02a6b5;
+}
+
