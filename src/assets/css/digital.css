@@ -16,23 +16,46 @@ li {
 }
 
 .value {
-  border: 1px solid rgba(25,186,139,0.17);
-  line-height: 80px;
+  border: 1px solid rgba(25,186,139,0.01);
+  line-height: 60px;
   font-size: 70px;
   color: #ffeb7b;
   font-family: "electronicFont";
 }
 
 .unit {
-  border: 1px solid rgba(25,186,139,0.17);
-  line-height: 80px;
+  border: 1px solid rgba(25,186,139,0.01);
+  line-height: 60px;
   font-size: 30px;
-  color: #eeeb7b;
+  color: #636348;
   font-family: "electronicFont";
 }
 
+.prompt {
+  /*border: solid rgba(25,186,139,0.17);*/
+  border-bottom-width: unset;
+  border-top-width: unset;
+  border-right-width: 1px;
+  border-left-style: solid;
+  border-color: rgba(25,186,139,0.01);
+  text-align: center;
+  line-height: 20px;
+  font-size: 18px;
+  color: rgba(246, 239, 239, 0.7);
+}
 
-.value::before {
+
+/*.prompt {*/
+/*  border: 1px solid rgba(25,186,139,0.17);*/
+/*  text-align: left;*/
+/*  color: rgba(255,255,255,0.7);*/
+/*  font-size: 18px;*/
+/*  height: 40px;*/
+/*  line-height: 40px;*/
+/*}*/
+
+
+.value:before {
   position: absolute;
   top: 0;
   left: 0;
@@ -42,7 +65,7 @@ li {
   border-top: 2px solid #02a6b5;
   border-left: 2px solid #02a6b5;
 }
-.unit::after {
+.unit:after {
   position: absolute;
   bottom: 0;
   right: 0;

@@ -1,7 +1,7 @@
 <template>
 <div>
   <projheader></projheader>
-  <digital></digital>
+  <digital :data = 'digit1'></digital>
 </div>
 </template>
 
@@ -15,7 +15,11 @@ export default {
 
   data(){
     return {
-
+      digit1:{
+        value: "12212",
+        unit: "t/h",
+        prompt: "瞬时流量"
+      }
     }
   },
 

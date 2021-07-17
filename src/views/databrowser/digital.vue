@@ -1,14 +1,12 @@
 <template>
 <div class="digital">
-  <span class = "value">1233.54</span>
-  <span class="unit">℃</span>
   <ul>
     <li>
-      <span class = "value">1233.54</span>
-      <span class = "unit">℃</span>
+      <span class = "value">{{data.value}}</span>
+      <span class = "unit">{{data.unit}}</span>
     </li>
     <li>
-      <span class = 'prompt'>提示</span>
+      <span :style = "{'border-left-width':valueWidth}" class = 'prompt'>{{data.prompt}}</span>
     </li>
   </ul>
 
@@ -20,8 +18,18 @@
 export default {
   name: "digital",
   props:{
-    value: "",
-    unit:""
+    data: {
+      value: "",
+      unit:"",
+      prompt:""
+    }
+  },
+  computed:{
+    valueWidth(){
+      // console.log(data.value.length);
+      // console.log(this.data.unit.length);
+      return this.data.value.length*8 + this.data.unit.length*5 + "px"
+    }
   }
 }
 </script>
