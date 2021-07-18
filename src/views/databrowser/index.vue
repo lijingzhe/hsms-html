@@ -1,13 +1,15 @@
 <template>
 <div>
-  <projheader></projheader>
-  <digital :data = 'digit1'></digital>
+  <banner></banner>
+  <mainbox></mainbox>
+<!--  <digital :data = 'digit1'></digital>-->
 </div>
 </template>
 
 <script>
-import projheader from "@/views/databrowser/projheader";
+import banner from "@/views/databrowser/banner";
 import digital from "@/views/databrowser/digital";
+import mainbox from "@/views/databrowser/mainbox";
 
 export default {
 
@@ -15,21 +17,18 @@ export default {
 
   data(){
     return {
-      digit1:{
-        value: "12212",
-        unit: "t/h",
-        prompt: "瞬时流量"
-      }
+
     }
   },
 
   components: {
-    projheader,
-    digital
+    banner,
+    digital,
+    mainbox
   }
 }
 </script>
 
 <style scoped>
-
+@import "../../assets/css/normalize.css";
 </style>

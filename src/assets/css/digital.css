@@ -8,25 +8,31 @@ li {
   list-style: none;
 }
 
-.digital {
-  background-color: rgba(101,132,226,0.1);
-  padding: 15px;
-  margin: 10px;
+.ul {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
 
+.digital {
+  background-color: rgba(101,132,226,0.01);
+  padding: 0;
+  margin: 0;
 }
 
 .value {
   border: 1px solid rgba(25,186,139,0.01);
-  line-height: 60px;
-  font-size: 70px;
+  /*line-height: 60px;*/
+  /*font-size: 70px;*/
+  text-align: left;
   color: #ffeb7b;
   font-family: "electronicFont";
 }
 
 .unit {
   border: 1px solid rgba(25,186,139,0.01);
-  line-height: 60px;
-  font-size: 30px;
+  /*line-height: 60px;*/
+  /*font-size: 30px;*/
   color: #636348;
   font-family: "electronicFont";
 }
@@ -40,7 +46,7 @@ li {
   border-color: rgba(25,186,139,0.01);
   text-align: center;
   line-height: 20px;
-  font-size: 18px;
+  /*font-size: 15px;*/
   color: rgba(246, 239, 239, 0.7);
 }
 

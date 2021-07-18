@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: "header",
+  name: "banner",
   data(){
     return {
       time:""
@@ -26,7 +26,7 @@ export default {
           var h = dt.getHours(); //获取时
           var m = dt.getMinutes(); //获取分
           var s = dt.getSeconds(); //获取秒
-          that.time = "当前时间：" + y + "年" +
+          that.time =  y + "年" +
             (mt < 10 ? "0" + mt + "月" : mt + "月") +
             (day < 10 ? "0" + day + "日-" : day + "日-") +
             (h < 10 ? "0" + h + "时" : h + "时") +
@@ -43,5 +43,5 @@ export default {
 </script>
 
 <style scoped>
-@import "../../assets/css/projheader.css";
+@import "../../assets/css/banner.css";
 </style>

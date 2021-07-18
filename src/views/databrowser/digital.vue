@@ -1,12 +1,12 @@
 <template>
 <div class="digital">
-  <ul>
+  <ul class="ul">
     <li>
-      <span class = "value">{{data.value}}</span>
-      <span class = "unit">{{data.unit}}</span>
+      <span :style="{fontSize:valueFontSize}" class = "value">{{data.value}}</span>
+      <span :style="{fontSize:unitFontSize}" class = "unit">{{data.unit}}</span>
     </li>
     <li>
-      <span :style = "{'border-left-width':valueWidth}" class = 'prompt'>{{data.prompt}}</span>
+      <span :style = "{'border-left-width':valueWidth,fontSize:promptFontSize}" class = 'prompt'>{{data.prompt}}</span>
     </li>
   </ul>
 
@@ -19,16 +19,27 @@ export default {
   name: "digital",
   props:{
     data: {
-      value: "",
-      unit:"",
-      prompt:""
+      value: '',
+      unit: '',
+      prompt: '',
+      valueSize: {
+        type: Number,
+        default: 70
+      }
     }
   },
   computed:{
     valueWidth(){
-      // console.log(data.value.length);
-      // console.log(this.data.unit.length);
-      return this.data.value.length*8 + this.data.unit.length*5 + "px"
+      return this.data.value.length * this.data.valueSize / 8 + this.data.unit.length + 'px'
+    },
+    valueFontSize(){
+      return this.data.valueSize + 'px'
+    },
+    unitFontSize(){
+      return this.data.valueSize / 2 + 'px'
+    },
+    promptFontSize(){
+      return this.data.valueSize / 4 + 'px'
     }
   }
 }
