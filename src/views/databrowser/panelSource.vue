@@ -5,6 +5,14 @@
   </div>
 
   <div class="chart" :style="{height:chartheight,width:width}">
+    <ul>
+      <li>
+        <digital :data = "$store.state.supplyT" class = "li"></digital>
+        <digital :data = "$store.state.heat" class = "li"></digital>
+        <digital :data = "$store.state.returnT" class = "li"></digital>
+        <digital :data = "$store.state.flow" class = "li"></digital>
+      </li>
+    </ul>
   </div>
 
   <div class="footer">

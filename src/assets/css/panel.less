@@ -1,8 +1,73 @@
 .panel {
-  padding-top: 3px;
-  margin: 0;
-  height: 150px;
-  background-color: #2d84d0;
+  position: relative;
+  border: 1px solid rgba(25,186,139,0.17);
+  //height: 280px;
+  //width: none;
+  background-color: url(../img/line.png) rgba(255,255,255,0.4);
+  padding: 2px 5px;
+  margin-bottom: 5px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border-left: 2px solid #02a6b5;
+    border-top: 2px solid #02a6b5;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid #02a6b5;
+    border-top: 2px solid #02a6b5;
+  }
+
+  .title {
+    height: 10px;
+    color: white;
+    line-height: 20px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .chart {
+    //height: 240px;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    &::before {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      border-left: 2px solid #02a6b5;
+      border-bottom: 2px solid #02a6b5;
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      right: 0;
+      width: 10px;
+      height: 10px;
+      border-right: 2px solid #02a6b5;
+      border-bottom: 2px solid #02a6b5;
+    }
+  }
 }
 
 .li {

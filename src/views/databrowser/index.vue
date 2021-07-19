@@ -2,7 +2,6 @@
 <div>
   <banner></banner>
   <mainbox></mainbox>
-<!--  <digital :data = 'digit1'></digital>-->
 </div>
 </template>
 
