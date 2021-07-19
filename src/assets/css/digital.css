@@ -23,7 +23,7 @@ li {
 .value {
   border: 1px solid rgba(25,186,139,0.01);
   /*line-height: 60px;*/
-  /*font-size: 70px;*/
+  /*font-size: 0.25rem;*/
   text-align: left;
   color: #ffeb7b;
   font-family: "electronicFont";

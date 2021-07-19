@@ -32,13 +32,13 @@ export default {
   },
   computed: {
     width(){
-       return (this.param.width <= 0) ?'none' : this.param.width + 'px';
+       return (this.param.width <= 0) ?'none' : this.param.width + 'rem';
     },
     height(){
-      return (this.param.height <= 0) ? '200px' : this.param.height + 'px';
+      return (this.param.height <= 0) ? '200px' : this.param.height + 'rem';
     },
     chartheight(){
-      return (this.param.height <= 0) ? '160px' : this.param.height - 40 + 'px';
+      return (this.param.height <= 0) ? '160px' : this.param.height - 0.2 + 'rem';
     },
     title(){
       return this.param.title

@@ -8,7 +8,7 @@
       <panel :param="stations"></panel>
     </div>
     <div class="column">
-      <panel :param="bang"></panel>
+      <panel :param="alarm"></panel>
     </div>
     <div class="column">
       <panelSource :param="summary"></panelSource>
@@ -32,27 +32,32 @@ export default {
     return {
       summary:{
         title: '汇通首站一网',
-        height: 200,
+        height: 1,
         width: 0
       },
       tempTrend:{
         title: '汇通首站一网温度',
-        height: 200,
+        height: 1.5,
         width: 0
       },
       flowTrend:{
         title: '汇通首站一网流量',
-        height: 200,
+        height: 1.5,
         width: 0
       },
       stations:{
         title: '换热站',
-        height: 300,
+        height: 1.5,
         width: 0
       },
-      bang:{
-        title: '换热站',
-        height: 200,
+      alarm:{
+        title: '小区热耗对比',
+        height: 1,
+        width: 0
+      },
+      main:{
+        title: '',
+        height: 5,
         width: 0
       }
     }

@@ -33,10 +33,10 @@ export default {
       return this.data.value.length * this.data.valueSize / 8 + this.data.unit.length + 'px'
     },
     valueFontSize(){
-      return this.data.valueSize + 'px'
+      return this.data.valueSize + 'rem'
     },
     unitFontSize(){
-      return this.data.valueSize / 2 + 'px'
+      return this.data.valueSize / 2 + 'rem'
     },
     promptFontSize(){
       return this.data.valueSize / 4 + 'px'
