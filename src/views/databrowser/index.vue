@@ -1,8 +1,7 @@
 <template>
 <div>
-<!--  <banner></banner>-->
-<!--  <mainbox></mainbox>-->
-  <heatmap2></heatmap2>
+  <banner></banner>
+  <mainbox></mainbox>
 </div>
 </template>
 

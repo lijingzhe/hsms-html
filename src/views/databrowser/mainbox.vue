@@ -7,12 +7,14 @@
       <panel :param="flowTrend"></panel>
       <panel :param="stations"></panel>
     </div>
+
     <div class="column">
       <div class="mainarea">
-        <heatmap2></heatmap2>
+        <Home></Home>
       </div>
       <panelBar :param="alarm"></panelBar>
     </div>
+
     <div class="column">
       <panelSource :param="summary"></panelSource>
       <panelTempTrend :param="tempTrend"></panelTempTrend>
@@ -30,6 +32,7 @@ import panelTempTrend from "@/views/databrowser/panelTempTrend";
 import panelBar from "@/views/databrowser/panelBar";
 import heatmap from "@/views/databrowser/heatmap";
 import heatmap2 from "@/views/databrowser/heatmap2";
+import Home from "./Home";
 
 export default {
   name: "mainbox",
@@ -76,7 +79,8 @@ export default {
     panelTempTrend,
     panelBar,
     heatmap,
-    heatmap2
+    heatmap2,
+    Home
   }
 }
 </script>
