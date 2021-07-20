@@ -1,0 +1,17 @@
+.mainbox {
+  display: flex;
+  min-width: 1024px;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 0 0;
+}
+.mainbox .column {
+  flex: 3;
+}
+.mainbox .column:nth-child(2) {
+  flex: 8;
+}
+.mainbox .mainarea {
+  height: 3.87rem;
+}
+/*# sourceMappingURL=mainbox.css.map */

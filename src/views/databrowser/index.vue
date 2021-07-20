@@ -1,7 +1,8 @@
 <template>
 <div>
-  <banner></banner>
-  <mainbox></mainbox>
+<!--  <banner></banner>-->
+<!--  <mainbox></mainbox>-->
+  <heatmap2></heatmap2>
 </div>
 </template>
 
@@ -9,6 +10,7 @@
 import banner from "@/views/databrowser/banner";
 import digital from "@/views/databrowser/digital";
 import mainbox from "@/views/databrowser/mainbox";
+import heatmap2 from "@/views/databrowser/heatmap2";
 
 export default {
 
@@ -23,7 +25,8 @@ export default {
   components: {
     banner,
     digital,
-    mainbox
+    mainbox,
+    heatmap2
   }
 }
 </script>

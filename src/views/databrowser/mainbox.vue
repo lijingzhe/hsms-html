@@ -8,7 +8,10 @@
       <panel :param="stations"></panel>
     </div>
     <div class="column">
-      <panel :param="alarm"></panel>
+      <div class="mainarea">
+        <heatmap2></heatmap2>
+      </div>
+      <panelBar :param="alarm"></panelBar>
     </div>
     <div class="column">
       <panelSource :param="summary"></panelSource>
@@ -24,6 +27,9 @@
 import panel from "./panel";
 import panelSource from "./panelSource"
 import panelTempTrend from "@/views/databrowser/panelTempTrend";
+import panelBar from "@/views/databrowser/panelBar";
+import heatmap from "@/views/databrowser/heatmap";
+import heatmap2 from "@/views/databrowser/heatmap2";
 
 export default {
   name: "mainbox",
@@ -37,17 +43,17 @@ export default {
       },
       tempTrend:{
         title: '汇通首站一网温度',
-        height: 1.5,
+        height: 1,
         width: 0
       },
       flowTrend:{
         title: '汇通首站一网流量',
-        height: 1.5,
+        height: 1,
         width: 0
       },
       stations:{
         title: '换热站',
-        height: 1.5,
+        height: 1.7,
         width: 0
       },
       alarm:{
@@ -67,7 +73,10 @@ export default {
   components: {
     panel,
     panelSource,
-    panelTempTrend
+    panelTempTrend,
+    panelBar,
+    heatmap,
+    heatmap2
   }
 }
 </script>
