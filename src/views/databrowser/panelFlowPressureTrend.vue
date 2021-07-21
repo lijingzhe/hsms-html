@@ -4,10 +4,10 @@
      {{this.param.title}}
   </div>
 
-  <div id="TempTrend" class="chart" :style="{height:chartheight,width:width}">
+  <div id="FlowTrend" class="chart" :style="{height:chartheight,width:width}">
   </div>
 
-  <div class="footer">
+  <div class="footer" >
   </div>
 
 </div>
@@ -29,8 +29,11 @@ export default {
       width: Number,
       height: Number
     },
-    T1: [],
-    T2: []
+    F1: [],
+    pressure:{
+      P1: [],
+      P2: []
+    }
   },
   computed: {
     width(){
@@ -47,29 +50,29 @@ export default {
     }
   },
   watch: {
-    T1(newValue){
-      this.tempTrend();
+    F1(newValue){
+      this.flowPressureTrend();
     }
   },
     components: {
     },
   methods: {
-    tempTrend() {
-      this.chartLine = echarts.init(document.getElementById("TempTrend"));
+    flowPressureTrend() {
+      this.chartLine = echarts.init(document.getElementById("FlowTrend"));
       // 指定图表的配置项和数据
       let option = {
         title: {
-          text: '一网温度',
+          text: '一网流量压力',
           textStyle: {
             fontSize: 12
           }
         },
-        color: ['red','white'],
+        color: ['white','#B67856FF','#1D5A3EFF'],
         tooltip: {
           trigger: 'axis'
         },
         legend: {
-          data: ['供温', '回温']
+          data: ['流量', '供压','回压']
         },
         grid: {
           left: '3%',
@@ -107,40 +110,42 @@ export default {
             }
           }
         },
-        yAxis: {
+        yAxis: [{
           type: 'value',
           splitLine: {
             show: false
           }
         },
+          {
+          type: 'value',
+          splitLine: {
+            show: false
+          }
+        }],
         series: [
           {
-            name: '供温',
+            yAxisIndex: 0,
+            name: '流量',
             type: 'line',
             smooth: true,
             symbol: 'none',
-            data: this.T1,
-            // itemStyle: {
-            //   normal: {
-            //     areaStyle: {type: 'default'},
-            //     color: new echarts.graphic.LinearGradient(
-            //       0, 0, 0, 1,
-            //       [
-            //         {offset: 0, color: '#ea3f15'},
-            //         {offset: 0.5, color: 'rgba(201,29,29,0.51)'},
-            //         {offset: 1, color: 'rgba(160,12,12,0.22)'}
-            //       ]
-            //     ),
-            //     borderColor:'#e52b1b',//拐点边框颜色
-            //     borderWidth:2//拐点边框大小
-            //   }},
+            data: this.F1
           },
           {
-            name: '回温',
+            yAxisIndex: 1,
+            name: '供压',
             type: 'line',
             smooth: true,
             symbol: 'none',
-            data: this.T2
+            data: this.pressure.P1
+          },
+          {
+            yAxisIndex: 1,
+            name: '回压',
+            type: 'line',
+            smooth: true,
+            symbol: 'none',
+            data: this.pressure.P2
           }
         ]
       };
@@ -149,7 +154,7 @@ export default {
     }
   },
   mounted(){
-    this.tempTrend()
+    this.flowPressureTrend()
   }
 }
 </script>

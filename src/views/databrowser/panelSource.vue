@@ -7,10 +7,10 @@
   <div class="chart" :style="{height:chartheight,width:width}">
     <ul>
       <li>
-        <digital :data = "$store.state.supplyT" class = "li"></digital>
-        <digital :data = "$store.state.heat" class = "li"></digital>
-        <digital :data = "$store.state.returnT" class = "li"></digital>
-        <digital :data = "$store.state.flow" class = "li"></digital>
+        <digital :data = "value.data1" class = "li"></digital>
+        <digital :data = "value.data2" class = "li"></digital>
+        <digital :data = "value.data3" class = "li"></digital>
+        <digital :data = "value.data4" class = "li"></digital>
       </li>
     </ul>
   </div>
@@ -31,11 +31,12 @@ export default {
       title: String,
       width: Number,
       height: Number
-    }
-  },
-  watch:{
-    param(newVal,oldVal){
-      console.log(newVal,oldVal)
+    },
+    value: {
+      data1: {},
+      data2: {},
+      data3: {},
+      data4: {}
     }
   },
   computed: {

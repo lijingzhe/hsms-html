@@ -30,7 +30,13 @@ export default {
   },
   computed:{
     valueWidth(){
-      return this.data.value.length * this.data.valueSize / 8 + this.data.unit.length + 'px'
+      if(this.data && this.data.value && this.data.unit) {
+        return this.data.value.length * this.data.valueSize / 8 + this.data.unit.length + 'px'
+      }
+      else{
+        return '5px';
+      }
+
     },
     valueFontSize(){
       return this.data.valueSize + 'rem'
@@ -41,7 +47,7 @@ export default {
     promptFontSize(){
       return this.data.valueSize / 4 + 'px'
     }
-  }
+  },
 }
 </script>
 

@@ -4,10 +4,10 @@
      {{this.param.title}}
   </div>
 
-  <div id="TempTrend" class="chart" :style="{height:chartheight,width:width}">
+  <div id="FlowTrend2" class="chart" :style="{height:chartheight,width:width}">
   </div>
 
-  <div class="footer">
+  <div class="footer" style="color: #f6ff7f">
   </div>
 
 </div>
@@ -30,7 +30,9 @@ export default {
       height: Number
     },
     T1: [],
-    T2: []
+    T2: [],
+    T3: [],
+    T4: []
   },
   computed: {
     width(){
@@ -55,21 +57,21 @@ export default {
     },
   methods: {
     tempTrend() {
-      this.chartLine = echarts.init(document.getElementById("TempTrend"));
+      this.chartLine = echarts.init(document.getElementById("FlowTrend2"));
       // 指定图表的配置项和数据
       let option = {
         title: {
-          text: '一网温度',
+          text: '二网温度',
           textStyle: {
             fontSize: 12
           }
         },
-        color: ['red','white'],
+        color: ['red','#bbff7f','#663D71','#908343'],
         tooltip: {
           trigger: 'axis'
         },
         legend: {
-          data: ['供温', '回温']
+          data: ['流量1', '流量2', '流量3', '流量4']
         },
         grid: {
           left: '3%',
@@ -115,7 +117,7 @@ export default {
         },
         series: [
           {
-            name: '供温',
+            name: '流量1',
             type: 'line',
             smooth: true,
             symbol: 'none',
@@ -136,11 +138,25 @@ export default {
             //   }},
           },
           {
-            name: '回温',
+            name: '流量2',
             type: 'line',
             smooth: true,
             symbol: 'none',
             data: this.T2
+          },
+          {
+            name: '流量3',
+            type: 'line',
+            smooth: true,
+            symbol: 'none',
+            data: this.T3
+          },
+          {
+            name: '流量4',
+            type: 'line',
+            smooth: true,
+            symbol: 'none',
+            data: this.T4
           }
         ]
       };
