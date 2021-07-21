@@ -19,7 +19,7 @@
       <panelTempTrend2 :param="tempTrend2" :T1="T1Trend" :T2="T2Trend" :T3="T3Trend2" :T4="T4Trend2"></panelTempTrend2>
       <panelFlowTrend :param="flowTrend2" :T1="T1Trend" :T2="T2Trend" :T3="T3Trend2" :T4="T4Trend2"></panelFlowTrend>
       <panel :param="flowTrend"></panel>
-      <panel :param="stations"></panel>
+      <panelRing :param="panelRing" :ringData="ringData"></panelRing>
     </div>
   </section>
 </div>
@@ -37,6 +37,7 @@ import heatmap2 from "@/views/databrowser/heatmap2";
 import Home from "./Home";
 import panelFlowPressureTrend from "@/views/databrowser/panelFlowPressureTrend";
 import panelFlowTrend from "@/views/databrowser/panelFlowTrend";
+import panelRing from "./panelRing";
 
 export default {
   name: "mainbox",
@@ -70,6 +71,11 @@ export default {
       },
       stations:{
         title: '换热站',
+        height: 1.7,
+        width: 0
+      },
+      panelRing:{
+        title: '经济指标分析',
         height: 1.7,
         width: 0
       },
@@ -117,10 +123,18 @@ export default {
           valueSize:0.25
         },
       },
+      //一网流量压力曲线
       F1:[],
       pressure: {
         P1:[],
         P2:[]
+      },
+      //技术指标百分比
+      ringData: {
+        T1: 33,
+        T2: 40,
+        T3: 60,
+        T4: 80
       }
     }
   },
@@ -184,7 +198,8 @@ export default {
     heatmap2,
     Home,
     panelFlowPressureTrend,
-    panelFlowTrend
+    panelFlowTrend,
+    panelRing
   }
 }
 </script>
