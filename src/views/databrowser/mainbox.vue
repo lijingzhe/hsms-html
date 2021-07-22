@@ -10,7 +10,9 @@
 
     <div class="column">
       <div class="mainarea">
-        <Home></Home>
+<!--        <Home></Home>-->
+        <heatmap></heatmap>
+<!--        <BaiduMapApi></BaiduMapApi>-->
       </div>
       <panelBar :param="alarm"></panelBar>
     </div>
@@ -19,7 +21,7 @@
       <panelTempTrend2 :param="tempTrend2" :T1="T1Trend" :T2="T2Trend" :T3="T3Trend2" :T4="T4Trend2"></panelTempTrend2>
       <panelFlowTrend :param="flowTrend2" :T1="T1Trend" :T2="T2Trend" :T3="T3Trend2" :T4="T4Trend2"></panelFlowTrend>
       <panel :param="flowTrend"></panel>
-      <panelRing :param="panelRing" :ringData="ringData"></panelRing>
+      <panelRing :param="panelRing" :T1="T1"  :T2="T2"  :T3="T3"  :T4="T4"></panelRing>
     </div>
   </section>
 </div>
@@ -38,6 +40,7 @@ import Home from "./Home";
 import panelFlowPressureTrend from "@/views/databrowser/panelFlowPressureTrend";
 import panelFlowTrend from "@/views/databrowser/panelFlowTrend";
 import panelRing from "./panelRing";
+import BaiduMapApi from "@/views/test/BaiduMapApi";
 
 export default {
   name: "mainbox",
@@ -130,12 +133,10 @@ export default {
         P2:[]
       },
       //技术指标百分比
-      ringData: {
-        T1: 33,
-        T2: 40,
-        T3: 60,
-        T4: 80
-      }
+        T1: 78,
+        T2: 87,
+        T3: 77,
+        T4: 65,
     }
   },
   methods:{
@@ -146,6 +147,11 @@ export default {
       let T2Trend = (Math.random() * 10 + 50).toFixed(1);
       let T3Trend2 = (Math.random() * 10 + 60).toFixed(1);
       let T4Trend2 = (Math.random() * 10 + 55).toFixed(1);
+
+      // this.T1 = (Math.random() * 100).toFixed(1);
+      // this.T2 = (Math.random() * 100).toFixed(1);
+      // this.T3 = (Math.random() * 100).toFixed(1);
+      // this.T4 = (Math.random() * 100).toFixed(1);
 
       let F1Trend = (Math.random() * 10 + 180).toFixed(1);
       let P1Trend = (Math.random()/5.0 + 0.4).toFixed(3);
@@ -165,18 +171,18 @@ export default {
       this.T3Trend2.push([utils.formatTime(this.now),T3Trend2]);
       this.T4Trend2.push([utils.formatTime(this.now),T4Trend2]);
 
-      this.T1Trend.length>600 && this.T1Trend.shift();
-      this.T2Trend.length>600 && this.T2Trend.shift();
-      this.T3Trend2.length>600 && this.T3Trend2.shift();
-      this.T4Trend2.length>600 && this.T4Trend2.shift();
+      this.T1Trend.length>60 && this.T1Trend.shift();
+      this.T2Trend.length>60 && this.T2Trend.shift();
+      this.T3Trend2.length>60 && this.T3Trend2.shift();
+      this.T4Trend2.length>60 && this.T4Trend2.shift();
 
       this.F1.push([utils.formatTime(this.now),F1Trend]);
       this.pressure.P1.push([utils.formatTime(this.now),P1Trend]);
       this.pressure.P2.push([utils.formatTime(this.now),P2Trend]);
 
-      this.F1.length>600 && this.F1.shift();
-      this.pressure.P1.length>600 && this.pressure.P1.shift();
-      this.pressure.P2.length>600 && this.pressure.P2.shift();
+      this.F1.length>60 && this.F1.shift();
+      this.pressure.P1.length>60 && this.pressure.P1.shift();
+      this.pressure.P2.length>60 && this.pressure.P2.shift();
 
       this.digitValue.data1.value = T1Digit;
       this.digitValue.data3.value = T2Digit;
@@ -199,11 +205,12 @@ export default {
     Home,
     panelFlowPressureTrend,
     panelFlowTrend,
-    panelRing
+    panelRing,
+    BaiduMapApi
   }
 }
 </script>
 
 <style lang="less" scoped>
-@import "~assets/css/mainbox.less";
+@import "../../assets/css/mainbox.less";
 </style>

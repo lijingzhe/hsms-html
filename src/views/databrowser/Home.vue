@@ -3,13 +3,14 @@
 </template>
 
 <script>
-import vueEcharts from "echarts";
+import echartes from "echarts";
 import zaixian from "@/assets/img/zaixian.png";
 import shangxian from "@/assets/img/shangxian.png";
 import lixian from "@/assets/img/lixian.png";
 // 注册山东省地图
 const guizhouJson = require("@/assets/map/yulin.json");
-vueEcharts.registerMap("guizhou", guizhouJson);
+echartes.registerMap("guizhou", guizhouJson);
+
 export default {
   name: "dynamicMap",
   data() {
@@ -133,7 +134,7 @@ export default {
           }
         }
       };
-      var myChart = vueEcharts.init(document.getElementById("distributionDiv"));
+      var myChart = echartes.init(document.getElementById("distributionDiv"));
       myChart.setOption(distributionOptions);
       myChart.on("click", function (params) {
         console.log("获取当前市区：", params); //此处写点击事件内容

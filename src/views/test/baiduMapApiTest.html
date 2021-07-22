@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- 强制360浏览器使用极速模式进行解析页面 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="renderer" content="webkit" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>vue-elementui</title>
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=4zEwemFoHjRbCVmZofeBnuHRGPtC7iVz"></script>
+  <!-- 路况图层 -->
+  <link href="//api.map.baidu.com/library/TrafficControl/1.4/src/TrafficControl_min.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="//api.map.baidu.com/library/TrafficControl/1.4/src/TrafficControl_min.js"></script>
+  <!-- 在页面的头部应用鼠标绘制工具开源库的文件 百度地图绘制图形 -->
+  <script type="text/javascript" src="http://api.map.baidu.com/library/DrawingManager/1.4/src/DrawingManager_min.js"></script>
+  <link rel="stylesheet" href="http://api.map.baidu.com/library/DrawingManager/1.4/src/DrawingManager_min.css" />
+</head>
+<body>
+<div id="app">
+
+</div>
+<!-- built files will be auto injected -->
+</body>
+<!-- 如果你调用百度地图api时，报错可以借鉴： Bmap is not defined ，那么就配置 webpack 配置文件**（webpack.base.conf.js）的module.exports中加个externals：** -->
+<!-- HTTPS中调用百度地图API - BMap is not defined 在调用百度地图API的URL中加 &s=1 -->
+<!-- 一定要给实例高度不然看不到地图  正常使用都是不会报错的-->
+
+<!-- rem引入问题 -->
+<!-- 引入rem之后存在个问题，会导致后期引入的ui库样式变小
+安装postcss-px2rem-exclude
+npm install postcss-px2rem-exclude --save
+因为 postcss-plugin-px2rem 这个插件  配置选项上有  exclude 属性，它可以配置 是否对 某个文件夹下的所有css文件不进行从px到rem的转换。
+　　所以我们可以利用这个特性，把项目中的  node_module 文件夹里面安装的ui框架排除掉。这样如果我们项目中是用了前端UI框架的话，就不会吧UI框（Vant,Element等）中的 px单位转换成rem了
+配置exclude选项，需要注意的是这个配置在vue.config.js中式不起作用的，如图。
+正确的配置位置是项目根目录下的postcss.config.js文件，如果你的项目没有生成这个独立文件，就需要在你的package.js里设置。
+postcss.config.js
+module.exports = {
+    plugins: {
+    autoprefixer: {},
+    "postcss-px2rem-exclude": {
+    remUnit: 75,
+    exclude: /node_modules|folder_name/i
+    }
+  }
+};
+
+package.json
+"postcss": {
+    "plugins": {
+    "autoprefixer": {},
+    "postcss-px2rem-exclude":{
+    "remUnit": 75,
+    "exclude":"/node_modules|floder_name/i"
+    }
+  }
+}, -->
+
+<!--
+this.$route.params 刷新时值丢失
+解决：路由路径中加上 /:参数名（非必传参数后加‘?’, eg: /:id?） -->
+</html>

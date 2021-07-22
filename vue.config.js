@@ -15,7 +15,10 @@ module.exports = {
         'network': '@/network',
         'views': '@/views',
       }
-    }
+    },
+    // externals: {
+    //   "BMap": "BMap"
+    // }
   },
   pluginOptions: {
     'style-resources-loader': {
