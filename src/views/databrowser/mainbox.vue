@@ -12,6 +12,7 @@
       <div class="mainarea">
 <!--        <Home></Home>-->
         <heatmap></heatmap>
+<!--        <heatmap2></heatmap2>-->
 <!--        <BaiduMapApi></BaiduMapApi>-->
       </div>
       <panelBar :param="alarm"></panelBar>

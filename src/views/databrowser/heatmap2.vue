@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="mainheat">
     <button class="btn" @click="loadHeatmap">热力图</button>
   </div>
 </template>
@@ -7,7 +7,7 @@
 import h337 from 'heatmap.js'
 
 export default {
-  name: 'Heatmap',
+  name: 'Heatmapheat',
   methods: {
     loadHeatmap() {
       var viewer = window.Viewer
@@ -30,9 +30,10 @@ export default {
     },
     createHeatMap(max, data) {
       // 创建元素
-      var heatDoc = document.createElement('div')
-      heatDoc.setAttribute('style', 'width:1000px;height:1000px;margin: 0px;display: none;')
-      document.body.appendChild(heatDoc)
+      // var heatDoc = document.createElement('div')
+      // heatDoc.setAttribute('style', 'width:1000px;height:1000px;margin: 0px;display: none;')
+      // document.body.appendChild(heatDoc)
+      var hetDoc = document.getElementById('mainheat');
       // 创建热力图对象
       var heatmap = h337.create({
         container: heatDoc,
