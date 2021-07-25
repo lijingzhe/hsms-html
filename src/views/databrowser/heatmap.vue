@@ -9,10 +9,10 @@ import echarts from "echarts"
 import {request} from "@/network/request";
 
 require("echarts/extension/bmap/bmap");
-const CUSTOM_MAP_CONFIG = require("../../assets/map/style/my_map_config.json");
+const CUSTOM_MAP_CONFIG = require("../../assets/map/style/custom_map_config.json");
 const DARK_MAP_CONFIG = {}
 
-import data from "@/assets/json/mapjson.json";
+// import data from "@/assets/json/mapjson.json";
 
 export default {
   name: "map12",
@@ -96,9 +96,9 @@ export default {
 
         setTimeout(() => {
           console.log(CUSTOM_MAP_CONFIG);
-          // bmap.setMapStyle({styleJson:CUSTOM_MAP_CONFIG})
-          bmap.setMapStyle({features: ["road","building","water","land"],
-            style:'midnight'})
+          bmap.setMapStyleV2({styleJson:CUSTOM_MAP_CONFIG})
+          // bmap.setMapStyle({features: ["road","building","water","land"],
+          //   style:'midnight'})
         } ,500);
 
       }
