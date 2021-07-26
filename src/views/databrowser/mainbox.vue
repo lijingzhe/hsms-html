@@ -1,3 +1,4 @@
+<script src="../../../../Downloads/myProject/myProject/src/main.js"></script>
 <template>
 <div>
   <section class="mainbox">
@@ -5,7 +6,7 @@
       <panelSource :param="summary" :value="digitValue"></panelSource>
       <panelTempTrend :param="tempTrend" :T1="T1Trend" :T2="T2Trend"></panelTempTrend>
       <panelFlowPressureTrend :param="flowTrend" :F1="F1" :pressure="pressure"></panelFlowPressureTrend>
-      <panel :param="stations"></panel>
+      <scroll :param="stations" :marqueeList="scrollList"></scroll>
     </div>
 
     <div class="column">
@@ -21,7 +22,7 @@
     <div class="column">
       <panelTempTrend2 :param="tempTrend2" :T1="T1Trend" :T2="T2Trend" :T3="T3Trend2" :T4="T4Trend2"></panelTempTrend2>
       <panelFlowTrend :param="flowTrend2" :T1="T1Trend" :T2="T2Trend" :T3="T3Trend2" :T4="T4Trend2"></panelFlowTrend>
-      <panel :param="flowTrend"></panel>
+      <panel :param="flowTrend2" ></panel>
       <panelRing :param="panelRing" :T1="T1"  :T2="T2"  :T3="T3"  :T4="T4"></panelRing>
     </div>
   </section>
@@ -42,6 +43,7 @@ import panelFlowPressureTrend from "@/views/databrowser/panelFlowPressureTrend";
 import panelFlowTrend from "@/views/databrowser/panelFlowTrend";
 import panelRing from "./panelRing";
 import BaiduMapApi from "@/views/test/BaiduMapApi";
+import scroll from "@/views/databrowser/scroll";
 
 export default {
   name: "mainbox",
@@ -138,6 +140,118 @@ export default {
         T2: 87,
         T3: 77,
         T4: 65,
+
+      "scrollList": [
+        {
+          name: '苹果1',
+          value: '1.68',
+          state: 0
+        },
+        {
+          name: '橘子2',
+          value: '0.9',
+          state: 0
+        },
+        {
+          name: '香蕉3',
+          value: '2.58',
+          state: 0
+        },
+        {
+          name: '猕猴桃4',
+          value: '3.2',
+          state: 1
+        },
+        {
+          name: '苹果5',
+          value: '1.682',
+          state: 2
+        },
+        {
+          name: '橘子6',
+          value: '0.92',
+          state: 1
+        },
+        {
+          name: '香蕉7',
+          value: '2.582',
+        },
+        {
+          name: '猕猴桃8',
+          value: '3.22',
+          state: 1
+        },
+        {
+          name: '橘子9',
+          value: '0.9',
+          state: 2
+        },
+        {
+          name: '香蕉10',
+          value: '2.58',
+          state: 2
+        },
+        {
+          name: '猕猴桃11',
+          value: '3.2',
+          state: 1
+        },
+        {
+          name: '苹果12',
+          value: '1.682',
+          state: 2
+        },
+        {
+          name: '橘子13',
+          value: '0.92',
+          state: 2
+        },
+        {
+          name: '香蕉14',
+          value: '2.582',
+          state: 1
+        },
+        {
+          name: '88888815',
+          value: '3.22',
+          state: 1
+        },
+        {
+          name: '橘子16',
+          value: '0.9',
+          state: 2
+        },
+        {
+          name: '香蕉17',
+          value: '2.58',
+          state: 2
+        },
+        {
+          name: '猕猴桃18',
+          value: '3.2',
+          state: 1
+        },
+        {
+          name: '苹果19',
+          value: '1.682',
+          state: 2
+        },
+        {
+          name: '橘子20',
+          value: '0.92',
+          state: 2
+        },
+        {
+          name: '香蕉21',
+          value: '2.582',
+          state: 1
+        },
+        {
+          name: '88888822',
+          value: '3.22',
+          state: 1
+        }
+      ],
     }
   },
   methods:{
@@ -207,7 +321,8 @@ export default {
     panelFlowPressureTrend,
     panelFlowTrend,
     panelRing,
-    BaiduMapApi
+    BaiduMapApi,
+    scroll
   }
 }
 </script>

@@ -35,7 +35,7 @@ export default {
   },
   computed: {
     width(){
-       return (this.param.width <= 0) ?'none' : this.param.width + 'rem';
+       return (this.param.width <= 0) ?'none' : this.param.width/3 + 'rem';
     },
     height(){
       return (this.param.height <= 0) ? '250px' : this.param.height + 'rem';
