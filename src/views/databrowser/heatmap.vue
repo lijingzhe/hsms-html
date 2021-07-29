@@ -96,7 +96,8 @@ export default {
 
         setTimeout(() => {
           console.log(CUSTOM_MAP_CONFIG);
-          bmap.setMapStyleV2({styleJson:CUSTOM_MAP_CONFIG})
+          bmap.setMapStyle('amap://styles/87fc86ed648cae752d097a75f4744133');
+          // bmap.setMapStyleV2({styleJson:CUSTOM_MAP_CONFIG})
           // bmap.setMapStyle({features: ["road","building","water","land"],
           //   style:'midnight'})
         } ,500);
