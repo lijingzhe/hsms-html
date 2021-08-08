@@ -6,7 +6,7 @@
       <panelSource :param="summary" :value="digitValue"></panelSource>
       <panelTempTrend :param="tempTrend" :T1="T1Trend" :T2="T2Trend"></panelTempTrend>
       <panelFlowPressureTrend :param="flowTrend" :F1="F1" :pressure="pressure"></panelFlowPressureTrend>
-      <scroll :param="stations" :marqueeList="scrollList"></scroll>
+      <panelScrollStation :param="stations" ></panelScrollStation>
     </div>
 
     <div class="column">
@@ -43,7 +43,7 @@ import panelFlowPressureTrend from "@/views/databrowser/panelFlowPressureTrend";
 import panelFlowTrend from "@/views/databrowser/panelFlowTrend";
 import panelRing from "./panelRing";
 import BaiduMapApi from "@/views/test/BaiduMapApi";
-import scroll from "@/views/databrowser/scroll";
+import panelScrollStation from "@/views/databrowser/panelScrollStation";
 
 export default {
   name: "mainbox",
@@ -143,115 +143,182 @@ export default {
 
       "scrollList": [
         {
-          name: '苹果1',
-          value: '1.68',
+        "name": "1号换热站",
+        "流量": 0.25,
+        "压力": 0.9,
+        "供温": 60,
+        "回温": 55,
+        state: 0
+      },
+        {
+          "name": "2号换热站",
+          "流量": 0.27,
+          "压力": 0.8,
+          "供温": 66,
+          "回温": 59,
+          state: 1
+        },
+        {
+          "name": "3号换热站",
+          "流量": 0.25,
+          "压力": 0.9,
+          "供温": 60,
+          "回温": 55,
+          state: 2
+        },
+        {
+          "name": "4号换热站",
+          "流量": 0.25,
+          "压力": 0.9,
+          "供温": 60,
+          "回温": 55,
+          state: 2
+        },
+        {
+          "name": "5号换热站",
+          "流量": 0.25,
+          "压力": 0.9,
+          "供温": 60,
+          "回温": 55,
+          state: 1
+        },
+        {
+          "name": "6号换热站",
+          "流量": 0.25,
+          "压力": 0.9,
+          "供温": 60,
+          "回温": 55,
           state: 0
         },
         {
-          name: '橘子2',
-          value: '0.9',
+          "name": "7号换热站",
+          "流量": 0.25,
+          "压力": 0.9,
+          "供温": 60,
+          "回温": 55,
+          state: 1
+        },
+        {
+          "name": "8号换热站",
+          "流量": 0.25,
+          "压力": 0.9,
+          "供温": 60,
+          "回温": 55,
           state: 0
         },
         {
-          name: '香蕉3',
-          value: '2.58',
+          "name": "9号换热站",
+          "流量": 0.25,
+          "压力": 0.9,
+          "供温": 60,
+          "回温": 55,
+          state: 2
+        },
+        {
+          "name": "10号换热站",
+          "流量": 0.25,
+          "压力": 0.9,
+          "供温": 60,
+          "回温": 55,
+          state: 2
+        },
+        {
+          "name": "11号换热站",
+          "流量": 0.25,
+          "压力": 0.9,
+          "供温": 60,
+          "回温": 55,
           state: 0
         },
         {
-          name: '猕猴桃4',
-          value: '3.2',
+          "name": "12号换热站",
+          "流量": 0.25,
+          "压力": 0.9,
+          "供温": 60,
+          "回温": 55,
           state: 1
         },
         {
-          name: '苹果5',
-          value: '1.682',
-          state: 2
-        },
-        {
-          name: '橘子6',
-          value: '0.92',
+          "name": "13号换热站",
+          "流量": 0.25,
+          "压力": 0.9,
+          "供温": 60,
+          "回温": 55,
           state: 1
         },
         {
-          name: '香蕉7',
-          value: '2.582',
+          "name": "14号换热站",
+          "流量": 0.25,
+          "压力": 0.9,
+          "供温": 60,
+          "回温": 55,
+          state: 0
         },
         {
-          name: '猕猴桃8',
-          value: '3.22',
+          "name": "15号换热站",
+          "流量": 0.25,
+          "压力": 0.9,
+          "供温": 60,
+          "回温": 55,
           state: 1
         },
         {
-          name: '橘子9',
-          value: '0.9',
+          "name": "16号换热站",
+          "流量": 0.25,
+          "压力": 0.9,
+          "供温": 60,
+          "回温": 55,
           state: 2
         },
         {
-          name: '香蕉10',
-          value: '2.58',
+          "name": "17号换热站",
+          "流量": 0.25,
+          "压力": 0.9,
+          "供温": 60,
+          "回温": 55,
+          state: 0
+        },
+        {
+          "name": "18号换热站",
+          "流量": 0.25,
+          "压力": 0.9,
+          "供温": 60,
+          "回温": 55,
+          state: 0
+        },
+        {
+          "name": "19号换热站",
+          "流量": 0.25,
+          "压力": 0.9,
+          "供温": 60,
+          "回温": 55,
           state: 2
         },
         {
-          name: '猕猴桃11',
-          value: '3.2',
-          state: 1
+          "name": "20号换热站",
+          "流量": 0.25,
+          "压力": 0.9,
+          "供温": 60,
+          "回温": 55,
+          state: 0
         },
         {
-          name: '苹果12',
-          value: '1.682',
+          "name": "21号换热站",
+          "流量": 0.25,
+          "压力": 0.9,
+          "供温": 60,
+          "回温": 55,
+          state: 0
+        },
+        {
+          "name": "22号换热站",
+          "流量": 0.25,
+          "压力": 0.9,
+          "供温": 60,
+          "回温": 55,
           state: 2
-        },
-        {
-          name: '橘子13',
-          value: '0.92',
-          state: 2
-        },
-        {
-          name: '香蕉14',
-          value: '2.582',
-          state: 1
-        },
-        {
-          name: '88888815',
-          value: '3.22',
-          state: 1
-        },
-        {
-          name: '橘子16',
-          value: '0.9',
-          state: 2
-        },
-        {
-          name: '香蕉17',
-          value: '2.58',
-          state: 2
-        },
-        {
-          name: '猕猴桃18',
-          value: '3.2',
-          state: 1
-        },
-        {
-          name: '苹果19',
-          value: '1.682',
-          state: 2
-        },
-        {
-          name: '橘子20',
-          value: '0.92',
-          state: 2
-        },
-        {
-          name: '香蕉21',
-          value: '2.582',
-          state: 1
-        },
-        {
-          name: '88888822',
-          value: '3.22',
-          state: 1
         }
-      ],
+      ]
     }
   },
   methods:{
@@ -322,7 +389,7 @@ export default {
     panelFlowTrend,
     panelRing,
     BaiduMapApi,
-    scroll
+    panelScrollStation
   }
 }
 </script>
