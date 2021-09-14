@@ -11,8 +11,8 @@
 
     <div class="column">
       <div class="mainarea">
-<!--        <Home></Home>-->
-        <heatmap></heatmap>
+        <Home></Home>
+<!--        <heatmap></heatmap>-->
 <!--        <heatmap2></heatmap2>-->
 <!--        <BaiduMapApi></BaiduMapApi>-->
       </div>

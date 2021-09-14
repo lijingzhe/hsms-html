@@ -4,7 +4,8 @@ export function  request(config){
     //1.创建实例
     const hsms = axios.create({
       baseURL: 'https://cdn.jsdelivr.net/gh/apache/echarts-website@asf-site/examples',
-      timeout: 5000
+      timeout: 5000,
+      withCredentials:true
     })
 
     //2.拦截器
